@@ -1,0 +1,50 @@
+/* Global */
+
+body {
+    background-color: black;
+    font-family: 'Inconsolata', 'sans-serif';
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.bodyText {
+    color: white;
+    font-size: 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.title {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    padding-right: 35px;
+}
+
+.githubLogoContainer {
+    height: 30px;
+    width: 30px;
+    background-color: #CDCDCD;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.githubLogo {
+    height: 25px;
+    width: 25px;
+}
