@@ -1,14 +1,23 @@
 const express = require('express');
-require('dotenv').config()
+const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const app = express();
-
-app.get('/', (req, res) => {
-    res.send('Hello World');
-})
-
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+  res.status(200);
+});
+
+app.post('/', bodyParser.json(), (req, res) => {  
+  data = req.body;
+  
+  res.status(200);
+  res.send("Success");
+})
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server has started on port: ${PORT}`);
 });
