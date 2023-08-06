@@ -13,7 +13,7 @@
 
     <!-- Link to files -->
     <link rel="stylesheet" href="src/styles.css">
-    <script src="src/script.js"></script>
+    <script src="src/script.js" defer></script>
 
     <title>lazymail</title>
 </head>
@@ -32,6 +32,72 @@
                 <img src="src/images/github.png" alt="Github" class="githubLogo">
             </div>
         </a>
+    </div>
+
+
+    <div class="contentContainer">
+        <div class="pageContent">
+            <!-- Forms -->
+            <div class="inputFormContainer">
+                <form class="inputForm" id="form">
+                    <div class="formElement">
+                            <div class="inputContainer">
+                                <div class="formLabel">
+                                    <label for="to" class="formLabel">To: </label>
+                                </div>
+            
+                                <div class="textBox" id="to" contenteditable="true" spellcheck="false"></div>
+            
+                            </div>
+                        <div class="charCount">0/25</div>
+                    </div>
+        
+                    <div class="formElement">
+                        <div class="inputContainer">
+                            <div class="formLabel">
+                                <label for="from" class="formLabel">From: </label>
+                            </div>
+        
+                            <div class="textBox" id="from" contenteditable="true" spellcheck="false"></div>
+        
+                        </div>
+
+                        <div class="charCount">0/25</div>
+                    </div>
+        
+                    <div class="formElement">
+                        <div class="inputContainer"  id="subject">
+                            <div class="formLabel" id="subjectLabel">
+                                <label for="to" class="formLabel">Subject: </label>
+                            </div>
+        
+                            <div class="textBox" id="subjectTextBox" contenteditable="true" spellcheck="false"></div>
+                        </div>
+
+                        <div class="charCount">0/150</div>
+                    </div>
+
+                    <button type="submit" class="submitButton">GENERATE</button>
+                    <div class="errorMessage bodyText hidden" id="errorNull">Please input details.</div>
+                </form>
+
+            </div>
+    
+    
+            <!-- Result -->
+            <div class="responseContainer">
+                <div class="response">
+                    <div class="responseText">
+                        GPT Response
+                    </div>
+                </div>
+
+                <div class="copyButtonContainer">
+                    <img src="src/images/copy.png" alt="copyIcon" class="copyIcon">
+                    <div class="copyButton">COPY</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

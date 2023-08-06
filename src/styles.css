@@ -2,6 +2,7 @@
 
 body {
     background-color: black;
+    color: white;
     font-family: 'Inconsolata', 'sans-serif';
 }
 
@@ -13,6 +14,10 @@ body {
 .bodyText {
     color: white;
     font-size: 20px;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Navbar */
@@ -48,3 +53,202 @@ body {
     height: 25px;
     width: 25px;
 }
+
+/* Content */
+.contentContainer {
+    display: flex;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+}
+
+.pageContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+
+    width: 100%;
+
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.inputFormContainer {
+    align-self: center;
+}
+
+.formElement {
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+    margin-bottom: 20px;;
+}
+
+.inputForm {
+    display: grid;
+    grid-template-columns: auto;
+
+    color: black;
+    font-size: 20px;
+}
+
+.inputContainer {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 420px;
+    height: 50px;
+
+    background-color: #DFF8EB;
+    border-radius: 50px
+}
+
+#subject {
+    height: 200px;
+    border-radius: 10px;
+}
+
+#subjectLabel {
+    align-self: normal;
+    padding-top: 20px;
+}
+
+#subjectTextBox {
+    align-self: start;
+    padding-top: 20px;
+
+    height: 160px;
+    word-wrap: break-word;
+}
+
+.formLabel {
+    display: inline-block;
+    width: 20%;
+    
+    padding-left: 2%;
+    margin-right: 10px;
+
+    font-weight: 700;
+}
+
+.textBox {
+    background-color: transparent;
+    resize: none;
+    width: 250px;
+
+    font-size: 18px;
+    align-content: center;
+
+    margin-right: 10px;
+
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: none
+}
+
+
+
+.charCount {
+    color: #CDCDCD;
+    margin-left: 10px;
+}
+
+.submitButton {
+    background-color: #C3D9CE;
+
+    width: 100px;
+    height: 40px;
+
+    justify-self: center;
+
+    font-family: 'Inconsolata', 'sans-serif';
+    font-weight: 600;
+    font-size: 18px;
+
+    border: none;
+    border-radius: 50px;
+}
+
+.submitButton:hover {
+    cursor: pointer;
+    user-select: none;
+
+    background-color: #9EB5A7;
+    transition: 0.2s ease-in-out;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 20px;
+    justify-self: center;
+}
+
+
+/* response */
+.responseContainer {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 10px;
+}
+
+.response {
+    background-color: #5B7553;
+    border-radius: 25px;
+    width: 500px;
+    height: 500px;
+}
+
+.responseText {
+    padding: 5%;
+    font-size: 12px;
+
+    width: 450px;
+    height: 450px;
+
+    user-select: none;
+}
+
+.copyButtonContainer {
+    justify-self: center;
+
+    height: 50px;
+    width: 100px;
+
+    display: flex;
+    border: none;
+    border-radius: 50px;
+
+    background-color: #C3D9CE;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyButtonContainer:hover {
+    cursor: pointer;
+    user-select: none;
+
+    background-color: #9EB5A7;
+    transition: 0.2s ease-in-out;
+}
+
+.copyButton {
+    font-family: 'Inconsolata', 'sans-serif';
+    color: black;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+}
+
+.copyIcon {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
