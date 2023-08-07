@@ -1,5 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const runPrompt = require('./runPrompt');
+
+require('./runPrompt');
 require('dotenv').config();
 
 const app = express();
@@ -11,11 +14,14 @@ app.get('/', (req, res) => {
   res.status(200);
 });
 
-app.post('/', bodyParser.json(), (req, res) => {  
+app.post('/generate-email', bodyParser.json(), async (req, res) => {  
   data = req.body;
-  
+  console.log("Request recieved");
+
+  response = await runPrompt(data.from, data.to, data.subject);
+
   res.status(200);
-  res.send("Success");
+  res.json({response: response});
 })
 
 app.listen(PORT, () => {

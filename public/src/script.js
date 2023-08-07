@@ -1,24 +1,38 @@
 let inputForm = document.getElementById("form");
 let errorNull = document.getElementById("errorNull");
+let responseDiv = document.getElementById("responseText");
 
 const isNonEmptyString = (value) => typeof(value) == 'string' && value.length > 0;
 
 async function getGPTResponse(from, to, subject) {
-    const response = await fetch("/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        
-        body: JSON.stringify({
-            from: from,
-            to: to,
-            subject: subject
-        }),
-    })
+    try {
+        const response = await fetch("/generate-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-    console.log(response);
+            body: JSON.stringify({
+                from: from,
+                to: to,
+                subject: subject
+            }),
+        })
+
+        if (response.ok) {
+            const data = await response.json(); // Parse the JSON response
+            return data.response; // Return the generated email text
+        } else {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+
+    } catch(err) {
+        console.log(err);
+    }
+
 }
+  
 
 inputForm.addEventListener("submit", async(e) => {
     e.preventDefault();
@@ -27,14 +41,14 @@ inputForm.addEventListener("submit", async(e) => {
     let from = document.getElementById("from").textContent;
     let to = document.getElementById("to").textContent;
     let subject = document.getElementById("subjectTextBox").textContent;
-    console.log(from, to, subject);
 
     if (!isNonEmptyString(from) || !isNonEmptyString(to) || !isNonEmptyString(subject)) {
         errorNull.classList.remove("hidden");
         return;
     } else {
         errorNull.classList.add("hidden");
-        console.log("Sending request...");
-        getGPTResponse(from, to, subject);
+        response = await getGPTResponse(from, to, subject);
+        responseDiv.innerText = response
+        // typeWriter(response.response, 10)
     }
 });

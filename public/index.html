@@ -24,7 +24,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="bodyText">
-            <a href="https://google.com" target="_blank" class="link">support me!</a>
+            <a href="https://www.buymeacoffee.com/zayeed" target="_blank" class="link">support me!</a>
         </div>
 
         <div class="title">lazymail</div>
@@ -81,6 +81,8 @@
 
                     <button type="submit" class="submitButton">GENERATE</button>
                     <div class="errorMessage bodyText hidden" id="errorNull">Please input details.</div>
+                    <div class="errorMessage bodyText hidden" id="errorInvalid">Your details could not be understood</div>
+                    <div class="errorMessage bodyText hidden" id="errorUnknown">Something went wrong. Please try again</div>
                 </form>
 
             </div>
@@ -90,7 +92,7 @@
             <div class="responseContainer">
                 <div class="response">
                     <div class="responseText">
-                        GPT Response
+                        <p id="responseText"> </p>
                     </div>
                 </div>
 

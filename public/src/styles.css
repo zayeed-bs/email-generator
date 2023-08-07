@@ -208,13 +208,21 @@ body {
 
 .responseText {
     padding: 5%;
+    padding-top: 0%;
     font-size: 12px;
 
     width: 450px;
     height: 450px;
 
-    user-select: none;
+    display: flex;
 }
+
+#responseText {
+    user-select: none;
+    word-wrap: break-word;
+    align-self: center;
+}
+
 
 .copyButtonContainer {
     justify-self: center;
@@ -252,4 +260,3 @@ body {
     height: 25px;
     margin-right: 5px;
 }
-
