@@ -41,6 +41,10 @@ function copy() {
 
 inputForm.addEventListener("submit", async(e) => {
     e.preventDefault();
+
+    document.getElementById("submitButton").disabled = true;
+    document.getElementById("submitButton").innerText = "...";
+
     console.log("Form submitted");
 
     if (!isNonEmptyString(summary.value)) {

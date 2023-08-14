@@ -183,6 +183,15 @@ body {
     border-radius: 50px;
 }
 
+.submitButton:disabled {
+    color: black;
+}
+
+.submitButton:disabled:hover {
+    background-color: #C3D9CE;
+    cursor: wait;
+}
+
 .submitButton:hover {
     cursor: pointer;
     user-select: none;
@@ -273,7 +282,6 @@ body {
     margin-right: 5px;
 }
 
-
 @media screen and (max-width:600px) {
     .navbar {
         padding-left: 25px;
@@ -320,11 +328,54 @@ body {
     }
 
     .inputContainer {
-        width: 300px;
+        width: 280px;
         height: 50px;
+    }
+    
+    .formElement {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .textBox {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .formLabel {
+        padding-left: 8px;
     }
 
     .charCount {
-        padding-right:100px;
+        margin-left: 5px;
+        width: auto;
+        font-size: 12px;
+    }
+
+    .submitButton {
+        margin-bottom: 50px;
+    }
+
+    .response {
+        width: 100%;
+        height: 400px;
+        margin-bottom: 25px;
+
+        display: flex;
+    }
+
+    .responseText {
+        width: 90%;
+        height: 350px;
+        align-self: center;
+        font-size: 8px;
+        padding-bottom: 0;
     }
 }
+
+/* 
+* {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */
