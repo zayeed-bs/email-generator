@@ -1,10 +1,12 @@
 let inputForm = document.getElementById("form");
 let errorNull = document.getElementById("errorNull");
+let errorUnknown = document.getElementById("errorUnknown");
 let responseDiv = document.getElementById("responseText");
+let summary = document.getElementById("summaryTextBox")
 
 const isNonEmptyString = (value) => typeof(value) == 'string' && value.length > 0;
 
-async function getGPTResponse(from, to, subject) {
+async function getGPTResponse(summary) {
     try {
         const response = await fetch("/generate-email", {
             method: "POST",
@@ -13,9 +15,7 @@ async function getGPTResponse(from, to, subject) {
             },
 
             body: JSON.stringify({
-                from: from,
-                to: to,
-                subject: subject
+                summary: summary
             }),
         })
 
@@ -26,29 +26,33 @@ async function getGPTResponse(from, to, subject) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-
     } catch(err) {
         console.log(err);
+        errorUnknown.classList.remove("hidden");
     }
 
 }
   
+function copy() {
+    var copyText = document.getElementById("responseText").innerText;
+    navigator.clipboard.writeText(copyText);
+}
+
 
 inputForm.addEventListener("submit", async(e) => {
     e.preventDefault();
     console.log("Form submitted");
 
-    let from = document.getElementById("from").textContent;
-    let to = document.getElementById("to").textContent;
-    let subject = document.getElementById("subjectTextBox").textContent;
-
-    if (!isNonEmptyString(from) || !isNonEmptyString(to) || !isNonEmptyString(subject)) {
+    if (!isNonEmptyString(summary.value)) {
         errorNull.classList.remove("hidden");
         return;
     } else {
         errorNull.classList.add("hidden");
-        response = await getGPTResponse(from, to, subject);
+        response = await getGPTResponse(summary.value);
         responseDiv.innerText = response
-        // typeWriter(response.response, 10)
     }
 });
+
+summary.addEventListener("input", () => {
+    document.getElementById("charCount").innerText = `${summary.value.length}/200`;
+})

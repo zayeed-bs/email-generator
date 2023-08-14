@@ -7,10 +7,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-async function runPrompt (from, to, subject) {
+async function runPrompt (summary) {
     console.log("Running prompt");
     const prompt = `This is a website that automatically generates an email based on the subject, the sender and the recipient. 
-    \n\n The sender is ${from}. The recepient is ${to}. The subject of the email is ${subject}. 
+    \n\n The summary of the email is ${summary}. If the summary does not make sense, please return exactly and only one word, 'rephrase'.
+    Limit the response to 500 words.
     
     \n\n Make the email engaging. Understand the context and format the email properly, change the formality according to the context.
     Make the email, atmost 500 words.`;
@@ -18,8 +19,8 @@ async function runPrompt (from, to, subject) {
     const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: prompt,
-        max_tokens: 1024,
-        temperature: 1
+        max_tokens: 500,
+        temperature: 1.2
     })
 
     return response.data.choices[0].text;

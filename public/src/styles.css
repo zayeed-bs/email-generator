@@ -54,15 +54,14 @@ body {
     width: 25px;
 }
 
+#mobileSupport {
+    display: none;
+}
+
 /* Content */
 .contentContainer {
     display: flex;
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0px;
-    left:0px;
-    z-index: -1;
+    margin-top: 5%;
 }
 
 .pageContent {
@@ -73,8 +72,8 @@ body {
 
     width: 100%;
 
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .inputFormContainer {
@@ -110,17 +109,17 @@ body {
     border-radius: 50px
 }
 
-#subject {
+#summary {
     height: 200px;
     border-radius: 10px;
 }
 
-#subjectLabel {
+#summaryLabel {
     align-self: normal;
     padding-top: 20px;
 }
 
-#subjectTextBox {
+#summaryTextBox {
     align-self: start;
     padding-top: 20px;
 
@@ -147,17 +146,25 @@ body {
     align-content: center;
 
     margin-right: 10px;
+    max-width: 200ch;
 
     border: 0;
     border-bottom: 1px solid black;
-    outline: none
+    outline: none;
+
+    font-family: 'Inconsolata', 'sans-serif';
+    font-size: 18px;
 }
-
-
 
 .charCount {
     color: #CDCDCD;
-    margin-left: 10px;
+    margin-left: 30px;
+    width: 90px;
+}
+
+.leftSide {
+    display: grid;
+    grid-template-columns: auto;
 }
 
 .submitButton {
@@ -223,7 +230,6 @@ body {
     align-self: center;
 }
 
-
 .copyButtonContainer {
     justify-self: center;
 
@@ -237,6 +243,12 @@ body {
     background-color: #C3D9CE;
     justify-content: center;
     align-items: center;
+}
+
+#copyButton {
+    background-color: transparent;
+    border: none;
+    justify-self: center;
 }
 
 .copyButtonContainer:hover {
@@ -259,4 +271,60 @@ body {
     width: 25px;
     height: 25px;
     margin-right: 5px;
+}
+
+
+@media screen and (max-width:600px) {
+    .navbar {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .title {
+        font-size: 24px;
+        padding: 0;
+    }
+
+    #support {
+        display: none;
+    }
+
+    #mobileSupport {
+        display: block;
+    }
+
+    .githubLogoContainer {
+        width: 25px;
+        height: 25px;
+    }
+
+    .githubLogo {
+        width: 20px;
+        height: 20px;       
+    }
+
+    .contentContainer {
+        position: relative;
+        z-index: 1;
+    }
+
+    .pageContent {
+        display: block;
+        padding-top: 10%;
+        padding-left: 5%;
+    }
+
+    .inputForm {
+        column-gap: 5px;
+        font-size: 16px;
+    }
+
+    .inputContainer {
+        width: 300px;
+        height: 50px;
+    }
+
+    .charCount {
+        padding-right:100px;
+    }
 }

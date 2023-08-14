@@ -18,7 +18,7 @@ app.post('/generate-email', bodyParser.json(), async (req, res) => {
   data = req.body;
   console.log("Request recieved");
 
-  response = await runPrompt(data.from, data.to, data.subject);
+  response = await runPrompt(data.summary);
 
   res.status(200);
   res.json({response: response});

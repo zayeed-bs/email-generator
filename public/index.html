@@ -23,9 +23,11 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="bodyText">
+        <div class="bodyText" id="support">
             <a href="https://www.buymeacoffee.com/zayeed" class="link">support me!</a>
         </div>
+
+        <div id="mobileSupport">💸</div>
 
         <div class="title">lazymail</div>
 
@@ -36,47 +38,22 @@
         </a>
     </div>
 
-
+    <!-- Content -->
     <div class="contentContainer">
         <div class="pageContent">
             <!-- Forms -->
             <div class="inputFormContainer">
                 <form class="inputForm" id="form">
                     <div class="formElement">
-                            <div class="inputContainer">
-                                <div class="formLabel">
-                                    <label for="to" class="formLabel">To: </label>
-                                </div>
-            
-                                <div class="textBox" id="to" contenteditable="true" spellcheck="false"></div>
-            
-                            </div>
-                        <div class="charCount">0/25</div>
-                    </div>
-        
-                    <div class="formElement">
-                        <div class="inputContainer">
-                            <div class="formLabel">
-                                <label for="from" class="formLabel">From: </label>
+                        <div class="inputContainer"  id="summary">
+                            <div class="formLabel" id="summaryLabel">
+                                <label for="to" class="formLabel">Summary: </label>
                             </div>
         
-                            <div class="textBox" id="from" contenteditable="true" spellcheck="false"></div>
-        
+                            <textarea class="textBox" id="summaryTextBox" spellcheck="false" maxlength="200"></textarea>
                         </div>
 
-                        <div class="charCount">0/25</div>
-                    </div>
-        
-                    <div class="formElement">
-                        <div class="inputContainer"  id="subject">
-                            <div class="formLabel" id="subjectLabel">
-                                <label for="to" class="formLabel">Subject: </label>
-                            </div>
-        
-                            <div class="textBox" id="subjectTextBox" contenteditable="true" spellcheck="false"></div>
-                        </div>
-
-                        <div class="charCount">0/150</div>
+                        <div class="charCount" id="charCount">0/200</div>
                     </div>
 
                     <button type="submit" class="submitButton">GENERATE</button>
@@ -84,7 +61,6 @@
                     <div class="errorMessage bodyText hidden" id="errorInvalid">Your details could not be understood</div>
                     <div class="errorMessage bodyText hidden" id="errorUnknown">Something went wrong. Please try again</div>
                 </form>
-
             </div>
     
     
@@ -96,10 +72,12 @@
                     </div>
                 </div>
 
-                <div class="copyButtonContainer">
-                    <img src="src/images/copy.png" alt="copyIcon" class="copyIcon">
-                    <div class="copyButton">COPY</button>
-                </div>
+                <button id="copyButton" onclick="copy()">
+                    <div class="copyButtonContainer" >
+                        <img src="src/images/copy.png" alt="copyIcon" class="copyIcon">
+                        <div class="copyButton">COPY</div>
+                    </div>
+                </button>
             </div>
         </div>
     </div>
