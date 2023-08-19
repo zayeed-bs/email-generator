@@ -6,6 +6,12 @@ let summary = document.getElementById("summaryTextBox")
 
 const isNonEmptyString = (value) => typeof(value) == 'string' && value.length > 0;
 
+function sanitizeInput(input) {
+    const unsafeCharsPattern = /[<>&\/]/g;
+
+    return input.replace(unsafeCharsPattern, "");
+}
+
 async function getGPTResponse(summary) {
     try {
         const response = await fetch("/generate-email", {
@@ -15,7 +21,7 @@ async function getGPTResponse(summary) {
             },
 
             body: JSON.stringify({
-                summary: summary
+                summary: sanitizeInput(summary)
             }),
         })
 
@@ -38,12 +44,16 @@ function copy() {
     navigator.clipboard.writeText(copyText);
 }
 
+function disabledSubmitButton(bool) {
+    document.getElementById("submitButton").disabled = bool;
+    document.getElementById("submitButton").innerText = bool ? "..." : "SUBMIT";
+}
+
 
 inputForm.addEventListener("submit", async(e) => {
     e.preventDefault();
 
-    document.getElementById("submitButton").disabled = true;
-    document.getElementById("submitButton").innerText = "...";
+    disabledSubmitButton(true);
 
     console.log("Form submitted");
 
@@ -52,7 +62,8 @@ inputForm.addEventListener("submit", async(e) => {
         return;
     } else {
         errorNull.classList.add("hidden");
-        response = await getGPTResponse(summary.value);
+        response = await getGPTResponse(summary.value)
+        disabledSubmitButton(false);
         responseDiv.innerText = response
     }
 });
