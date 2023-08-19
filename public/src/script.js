@@ -42,6 +42,9 @@ async function getGPTResponse(summary) {
 function copy() {
     var copyText = document.getElementById("responseText").innerText;
     navigator.clipboard.writeText(copyText);
+
+    document.getElementById("copyIcon").src = "src/images/check.png";
+    document.getElementById("copyText").innerText = "";
 }
 
 function disabledSubmitButton(bool) {

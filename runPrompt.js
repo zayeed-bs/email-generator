@@ -1,6 +1,7 @@
 require('dotenv').config();
 
-const filter =  new require('bad-words')();
+const Filter =  require('bad-words');
+const filter = new Filter();
 
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
@@ -22,7 +23,7 @@ async function runPrompt (summary) {
         model: "text-davinci-003",
         prompt: prompt,
         max_tokens: 500,
-        temperature: 1.2
+        temperature: 0.9
     })
 
     return response.data.choices[0].text;

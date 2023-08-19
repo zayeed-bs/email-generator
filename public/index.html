@@ -50,7 +50,7 @@
                                 <label for="to" class="formLabel">Summary: </label>
                             </div>
         
-                            <textarea class="textBox" id="summaryTextBox" spellcheck="false" maxlength="200"></textarea>
+                            <textarea class="textBox" placeholder="type here..." id="summaryTextBox" spellcheck="false" maxlength="200"></textarea>
                         </div>
 
                         <div class="charCount" id="charCount">0/200</div>
@@ -74,8 +74,8 @@
 
                 <button id="copyButton" onclick="copy()">
                     <div class="copyButtonContainer" >
-                        <img src="src/images/copy.png" alt="copyIcon" class="copyIcon">
-                        <div class="copyButton">COPY</div>
+                        <img src="src/images/copy.png" alt="copyIcon" class="copyIcon" id="copyIcon">
+                        <div class="copyButton" id="copyText">COPY</div>
                     </div>
                 </button>
             </div>
