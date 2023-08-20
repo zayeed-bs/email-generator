@@ -49,7 +49,7 @@ function copy() {
 
 function disabledSubmitButton(bool) {
     document.getElementById("submitButton").disabled = bool;
-    document.getElementById("submitButton").innerText = bool ? "..." : "SUBMIT";
+    document.getElementById("submitButton").innerText = bool ? "..." : "GENERATE";
 }
 
 
