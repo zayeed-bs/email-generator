@@ -10,8 +10,12 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
+let requestsCount = 0;
+
 async function runPrompt (summary) {
-    console.log("Running prompt");
+    requestsCount++;
+    console.log(`Request ${requestsCount}`);
+    
     const prompt = `This is a website that automatically generates an email based on the subject, the sender and the recipient. 
     \n\n The summary of the email is ${filter.clean(summary)}. If the summary does not make sense, please return exactly and only one word, 'rephrase'.
     Limit the response to 200 words.
