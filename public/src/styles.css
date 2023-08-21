@@ -36,6 +36,15 @@ body {
     font-size: 36px;
     font-weight: bold;
     padding-right: 35px;
+
+    display: grid;
+    justify-items: center;
+}
+
+.subtitleText {
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight: lighter;
 }
 
 .githubLogoContainer {
@@ -296,6 +305,10 @@ body {
     .title {
         font-size: 24px;
         padding: 0;
+    }
+
+    .subtitleText {
+        font-size: 14px;
     }
 
     #support {
