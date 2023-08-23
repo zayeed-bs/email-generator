@@ -168,6 +168,7 @@ body {
 
     font-family: 'Inconsolata', 'sans-serif';
     font-size: 18px;
+    
 }
 
 .textBox:focus {
@@ -231,6 +232,7 @@ body {
     display: grid;
     grid-template-columns: auto;
     row-gap: 10px;
+    user-select: none;
 }
 
 .response {
@@ -238,6 +240,7 @@ body {
     border-radius: 25px;
     width: 450px;
     height: 450px;
+    user-select: none;
 }
 
 .responseText {
@@ -249,6 +252,7 @@ body {
     height: 400px;
 
     display: flex;
+    user-select: none;
 }
 
 #responseText {
@@ -420,6 +424,8 @@ body {
     width: 100vw;
     height: 100vh;
 
+    user-select: none;
+
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -456,18 +462,22 @@ body {
 .helpMenuTitle {
     font-size: 24px;
     font-weight: bold;
+    user-select: none;
 }
 
 .closeButton {
     cursor: pointer;
     font-size: 24px;
     transition: 0.1s;
+
+    user-select: none;
 }
 
 .closeButton:hover {
     font-size: 28px;
     font-weight: 900;
 
+    user-select: none;
     transform-origin: center;
 }
 
@@ -476,6 +486,7 @@ body {
     padding: 0% 5%;
 
     padding-top: 2%;
+    user-select: none;
 }
 
 /* 
