@@ -1,5 +1,9 @@
 /* Global */
 
+.hidden {
+    display: none !important;
+}
+
 body {
     background-color: black;
     color: white;
@@ -232,8 +236,8 @@ body {
 .response {
     background-color: #5B7553;
     border-radius: 25px;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
 }
 
 .responseText {
@@ -241,8 +245,8 @@ body {
     padding-top: 0%;
     font-size: 14px;
 
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
 
     display: flex;
 }
@@ -389,6 +393,89 @@ body {
         font-size: 8px;
         padding-bottom: 0;
     }
+}
+
+.help {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 2%;
+}
+
+.helpAnchor {
+    color: white;
+    font-size: 20px;
+}
+
+.helpMenu {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.helpMenuContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 50%;
+    height: 70%;
+
+    background-color: #0f0f0f;
+    border-radius: 25px;
+}
+
+.helpMenuTitleBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+    height: 12%;
+
+    background-color: #202020;
+
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+
+    padding: 0% 5%;
+
+    position: sticky;
+}
+
+.helpMenuTitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.closeButton {
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.1s;
+}
+
+.closeButton:hover {
+    font-size: 28px;
+    font-weight: 900;
+
+    transform-origin: center;
+}
+
+.helpMenuText {
+    width: 90%;
+    padding: 0% 5%;
+
+    padding-top: 2%;
 }
 
 /* 

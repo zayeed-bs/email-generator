@@ -36,7 +36,6 @@ async function getGPTResponse(summary) {
         console.log(err);
         errorUnknown.classList.remove("hidden");
     }
-
 }
   
 function copy() {
@@ -45,6 +44,14 @@ function copy() {
 
     document.getElementById("copyIcon").src = "src/images/check.png";
     document.getElementById("copyText").innerText = "";
+}
+
+function openHelpMenu() {
+    document.getElementById("helpMenu").classList.remove("hidden");
+}
+
+function closeHelpMenu() {
+    document.getElementById("helpMenu").classList.add("hidden");
 }
 
 function disabledSubmitButton(bool) {
