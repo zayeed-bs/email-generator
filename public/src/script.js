@@ -47,11 +47,30 @@ function copy() {
 }
 
 function openHelpMenu() {
-    document.getElementById("helpMenu").classList.remove("hidden");
+   let helpMenu = document.getElementById("helpMenu")
+
+   helpMenu.classList.remove("hidden");
+
+   document.getElementById('helpMenuContent').animate([
+    { opacity: 0, transform: "scale(0.5)" },
+    { opacity: 1, transform: "scale(1)" }
+   ], {
+        duration: 100,
+        easing: "ease-in"
+    })
 }
 
 function closeHelpMenu() {
-    document.getElementById("helpMenu").classList.add("hidden");
+    document.getElementById('helpMenuContent').animate([
+        { opacity: 1, transform: "scale(1)" },
+        { opacity: 0, transform: "scale(0.5)" }
+       ], {
+            duration: 100,
+            easing: "ease-in"
+        }).onfinish = () => {
+            document.getElementById("helpMenu").classList.add("hidden");
+        }
+
 }
 
 function disabledSubmitButton(bool) {
