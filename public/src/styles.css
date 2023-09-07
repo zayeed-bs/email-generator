@@ -253,6 +253,8 @@ body {
 
     display: flex;
     user-select: none;
+
+    overflow: scroll;
 }
 
 #responseText {
